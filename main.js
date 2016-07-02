@@ -8,6 +8,10 @@ var heroImg=document.createElement("img");
 heroImg.src="images/rukia.gif";
 var ctImg=document.createElement("img");
 ctImg.src="images/tower-btn.png";
+var tower={
+  x:0,
+  y:0
+};
 var towerImg=document.createElement("img");
 towerImg.src="images/tower.png";
 var cursor={x:0,y:0}
@@ -17,9 +21,14 @@ $("#game").mousemove(function(event){
 });
 var isBuilding=false;
 $("#game").click(function(event){
-  isBuilding=false;
   if(event.offsetX>590&&event.offsetY>430){
     isBuilding=true;
+  }else{
+    if(isBuilding==true){
+      tower.x=event.offsetX-event.offsetX%32;
+      tower.y=event.offsetY-event.offsetY%32;
+    }
+    isBuilding=false;
   }
 });
 var canvas=document.getElementById("game");
