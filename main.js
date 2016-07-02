@@ -9,6 +9,8 @@ heroImg.src="images/rukia.gif";
 }
 var ctImg=document.createElement("img");
 ctImg.src="images/tower-btn.png";
+var towerImg=document.createElement("img");
+towerImg.src="images/"
 var canvas=document.getElementByld("game");
 var ctx=canvas.getContext("2d");
 function draw(){
