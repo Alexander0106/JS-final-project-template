@@ -6,7 +6,6 @@ var hero={
 };
 var heroImg=document.createElement("img");
 heroImg.src="images/rukia.gif";
-}
 var ctImg=document.createElement("img");
 ctImg.src="images/tower-btn.png";
 var towerImg=document.createElement("img");
