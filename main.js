@@ -23,4 +23,4 @@ function draw(){
   ctx.drawImage(ctImg,590,430,50,50);
   ctx.drawImage(towerImg,cursor.x,cursor.y);
 }
-setInterval(draw,40);
+setInterval(draw,10);
