@@ -15,7 +15,7 @@ $("#game").mousemove(function(event){
   cursor.x=event.offsetX;
   cursor.y=event.offsetY;
 });
-var canvas=document.getElementByld("game");
+var canvas=document.getElementByid("game");
 var ctx=canvas.getContext("2d");
 function draw(){
   ctx.drawImage(bglmg,hero.x,hero.y);
