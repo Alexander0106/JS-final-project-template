@@ -18,7 +18,7 @@ $("#game").mousemove(function(event){
 var isBuilding=false;
 $("#game").click(function(event){
   isBuilding=false;
-  if(cursor.x>590&&cursor.y>430){
+  if(event.x>590&&event.y>430){
     isBuilding=true;
   }
 });
