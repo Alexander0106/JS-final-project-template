@@ -12,8 +12,8 @@ var towerImg=document.createElement("img");
 towerImg.src="images/tower.png";
 var cursor={x:0,y:0}
 $("#game").mousemove(function(event){
-  cursor.x=(event.offsetX)-25;
-  cursor.y=(event.offsetY)-25;
+  cursor.x=(event.offsetX)-10;
+  cursor.y=(event.offsetY)-10;
 });
 var canvas=document.getElementById("game");
 var ctx=canvas.getContext("2d");
@@ -21,6 +21,6 @@ function draw(){
   ctx.drawImage(bglmg,hero.x,hero.y);
   ctx.drawImage(heroImg,hero.x,hero.y);
   ctx.drawImage(ctImg,590,430,50,50);
-  ctx.drawImage(towerImg,cursor.x,cursor.y,50,50);
+  ctx.drawImage(towerImg,cursor.x,cursor.y,20,20);
 }
 setInterval(draw,10);
