@@ -15,12 +15,21 @@ $("#game").mousemove(function(event){
   cursor.x=(event.offsetX)-16;
   cursor.y=(event.offsetY)-16;
 });
+var isBuilding=false;
+$("#game").click(function(event){
+  isBuilding=false;
+  if(cursor.x>590&&cursor.y>430){
+    isBuilding=true;
+  }
+});
 var canvas=document.getElementById("game");
 var ctx=canvas.getContext("2d");
 function draw(){
   ctx.drawImage(bglmg,hero.x,hero.y);
   ctx.drawImage(heroImg,hero.x,hero.y);
   ctx.drawImage(ctImg,590,430,50,50);
-  ctx.drawImage(towerImg,cursor.x,cursor.y,32,32);
+  if(isBuilding==true){
+    ctx.drawImage(towerImg,cursor.x,cursor.y,32,32);
+  }
 }
 setInterval(draw,10);
