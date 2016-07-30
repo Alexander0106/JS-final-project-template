@@ -41,7 +41,7 @@ $("#game").click(function(event){
 var canvas=document.getElementById("game");
 var ctx=canvas.getContext("2d");
 function draw(){
-  ctx.drawImage(bglmg,hero.x,hero.y);
+  ctx.drawImage(bglmg,0,0);
   hero.move();
   ctx.drawImage(heroImg,hero.x,hero.y);
   ctx.drawImage(ctImg,590,430,50,50);
