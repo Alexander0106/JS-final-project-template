@@ -1,8 +1,15 @@
+var FPS=60;
 var bglmg=document.createElement("img");
 bglmg.src="images/map.png";
 var hero={
-  x:0,
-  y:0
+  x:96,
+  y:448,
+  speed:64,
+  direction:{x:0,y:-1},
+  move:function(){
+    this.x=this.x+this.direction.x*this.speed/FPS;
+    this.y=this.y+this.direction.y*this.speed/FPS;
+  }
 };
 var heroImg=document.createElement("img");
 heroImg.src="images/rukia.gif";
@@ -35,6 +42,7 @@ var canvas=document.getElementById("game");
 var ctx=canvas.getContext("2d");
 function draw(){
   ctx.drawImage(bglmg,hero.x,hero.y);
+  hero.move();
   ctx.drawImage(heroImg,hero.x,hero.y);
   ctx.drawImage(ctImg,590,430,50,50);
   if(isBuilding==true){
