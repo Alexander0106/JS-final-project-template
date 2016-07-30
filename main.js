@@ -39,6 +39,8 @@ function draw(){
   ctx.drawImage(ctImg,590,430,50,50);
   if(isBuilding==true){
     ctx.drawImage(towerImg,cursor.x,cursor.y,32,32);
+  }else{
+    ctx.drawImage(towerImg,tower.x,tower.y);
   }
 }
 setInterval(draw,10);
