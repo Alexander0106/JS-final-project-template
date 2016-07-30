@@ -5,12 +5,17 @@ var hero={
   x:96,
   y:448,
   speed:64,
+  pathDes:0
   direction:{x:0,y:-1},
   move:function(){
     this.x=this.x+this.direction.x*this.speed/FPS;
     this.y=this.y+this.direction.y*this.speed/FPS;
   }
 };
+var enemyPath=[
+  {x:96,y:64},
+  {x:384,y:64}
+];
 var heroImg=document.createElement("img");
 heroImg.src="images/rukia.gif";
 var ctImg=document.createElement("img");
