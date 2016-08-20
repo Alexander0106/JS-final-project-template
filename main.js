@@ -62,9 +62,13 @@ function draw(){
     heroes.push(hero);
   }
   ctx.drawImage(bglmg,0,0);
-  hero.move();
   ctx.drawImage(heroImg,hero.x,hero.y);
-  ctx.drawImage(ctImg,590,430,50,50);
+  var i=0;
+  while(i<enemies.length){
+    i=i+1;
+    heroes[i].move();
+    ctx.drawImage(slimeImg,heroes[i].x,heroes[i].y);
+  }
   if(isBuilding==true){
     ctx.drawImage(towerImg,cursor.x,cursor.y,32,32);
   }else{
