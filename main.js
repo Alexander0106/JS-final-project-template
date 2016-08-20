@@ -1,5 +1,5 @@
 var clock=0;
-var clock=clock+1
+var clock=clock+1;
 var FPS=60;
 var bglmg=document.createElement("img");
 bglmg.src="images/map.png";
