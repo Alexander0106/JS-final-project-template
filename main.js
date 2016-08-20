@@ -57,6 +57,10 @@ var canvas=document.getElementById("game");
 var ctx=canvas.getContext("2d");
 function draw(){
   var clock=clock+1;
+  if(clock%100==0){
+    var enemy=new Hero();
+    heroes.push(hero);
+  }
   ctx.drawImage(bglmg,0,0);
   hero.move();
   ctx.drawImage(heroImg,hero.x,hero.y);
