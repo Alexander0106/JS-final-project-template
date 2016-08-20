@@ -12,6 +12,7 @@ function Hero(){
     this.y=this.y+this.direction.y*this.speed/FPS;
   }
 };
+var enemy=new Enemy();
 var enemyPath=[
   {x:96,y:64},
   {x:384,y:64}
