@@ -7,7 +7,7 @@ function Hero(){
   this.speed=64;
   this.pathDes=0;
   this.direction={x:0,y:-1};
-  this.move:function(){
+  this.move=function(){
     this.x=this.x+this.direction.x*this.speed/FPS;
     this.y=this.y+this.direction.y*this.speed/FPS;
   }
