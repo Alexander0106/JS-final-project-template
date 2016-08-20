@@ -1,12 +1,12 @@
 var FPS=60;
 var bglmg=document.createElement("img");
 bglmg.src="images/map.png";
-var hero={
-  x:96,
-  y:448,
-  speed:64,
-  pathDes:0
-  direction:{x:0,y:-1},
+function Hero(){
+  this.x=96;
+  this.y=448;
+  this.speed=64;
+  this.pathDes=0;
+  this.direction={x:0,y:-1};
   move:function(){
     this.x=this.x+this.direction.x*this.speed/FPS;
     this.y=this.y+this.direction.y*this.speed/FPS;
