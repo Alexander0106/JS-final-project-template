@@ -11,7 +11,7 @@ var heroPath=[
     {x:224,y:320},
     {x:544,y:320}
   ];
-function hero(){
+function Hero(){
   this.x=96;
   this.y=448;
   this.speed=64;
@@ -68,7 +68,7 @@ function draw(){
   ctx.drawImage(bglmg,0,0);
   ctx.drawImage(heroImg,hero.x,hero.y);
   var i=0;
-  while(i<enemies.length){
+  while(i<heroes.length){
     i=i+1;
     heroes[i].move();
     ctx.drawImage(slimeImg,heroes[i].x,heroes[i].y);
