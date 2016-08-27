@@ -1,5 +1,8 @@
 var clock=0;
 var FPS=60;
+var hp=100;
+ctx.font="25px Arial";
+ctx.fillStyle="red";
 var bglmg=document.createElement("img");
 bglmg.src="images/map.png";
 var heroPath=[
@@ -61,6 +64,7 @@ function draw(){
     var enemy=new Hero();
     heroes.push(hero);
   }
+  ctx.fillText(hp,100,100);
   ctx.drawImage(bglmg,0,0);
   ctx.drawImage(heroImg,hero.x,hero.y);
   var i=0;
