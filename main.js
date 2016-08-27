@@ -11,7 +11,8 @@ var heroPath=[
     {x:224,y:320},
     {x:544,y:320}
   ];
-function Hero(){
+function hero(){
+  this.hp=10;
   this.x=96;
   this.y=448;
   this.speed=64;
