@@ -54,10 +54,10 @@ $("#game").click(function(event){
     isBuilding=false;
   }
 });
-ctx.font="25px Arial";
-ctx.fillStyle="red";
 var canvas=document.getElementById("game");
 var ctx=canvas.getContext("2d");
+ctx.font="25px Arial";
+ctx.fillStyle="red";
 function draw(){
   var clock=clock+1;
   if(clock%100==0){
