@@ -72,7 +72,7 @@ function draw(){
   while(i<heroes.length){
     i=i+1;
     heroes[i].move();
-    ctx.drawImage(slimeImg,heroes[i].x,heroes[i].y);
+    ctx.drawImage(heroImg,heroes[i].x,heroes[i].y);
   }
   if(isBuilding==true){
     ctx.drawImage(towerImg,cursor.x,cursor.y,32,32);
