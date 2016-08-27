@@ -65,8 +65,8 @@ function draw(){
     var enemy=new Hero();
     heroes.push(hero);
   }
-  ctx.fillText("HP:"+hp,100,100);
   ctx.drawImage(bglmg,0,0);
+  ctx.fillText("HP:"+hp,100,100);
   ctx.drawImage(heroImg,hero.x,hero.y);
   var i=0;
   while(i<heroes.length){
