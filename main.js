@@ -111,9 +111,9 @@ function draw(){
   ctx.fillText("HP:"+hp,100,100);
   var i=0;
   while(i<heroes.length){
-    i=i+1;
     heroes[i].move();
     ctx.drawImage(slimeImg,heroes[i].x,heroes[i].y);
+    i=i+1
   }
   if(isBuilding==true){
     ctx.drawImage(towerImg,cursor.x,cursor.y,32,32);
