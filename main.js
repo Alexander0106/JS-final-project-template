@@ -63,7 +63,7 @@ ctx.fillStyle="red";
 function draw(){
   clock=clock+1;
   if(clock%100==0){
-    var hero=new hero();
+    var hero=new Hero();
     heroes.push(hero);
   }
   ctx.drawImage(bglmg,0,0);
