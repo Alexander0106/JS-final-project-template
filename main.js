@@ -25,7 +25,7 @@ function Hero(){
     this.y=heroPath[this.pathDes].y;
     this.pathDes=this.pathDes+1;
   }
-};
+}
 var heroes=[]
 var enemyPath=[
   {x:96,y:64},
@@ -65,7 +65,7 @@ ctx.fillStyle="red";
 function draw(){
   clock=clock+1;
   if(clock%100==0){
-    var hero=new Hero();
+    var hero = new Hero();
     heroes.push(hero);
   }
   ctx.drawImage(bglmg,0,0);
