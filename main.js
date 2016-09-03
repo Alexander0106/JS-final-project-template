@@ -33,7 +33,7 @@ function Hero(){
   this.pathDes=0;
   this.direction={x:0,y:-1};
   this.move = function(){
-    	if(isCollided(enemyPath[this.pathDes].x, enemyPath[this.pathDes].y, this.x, this.y, this.speed/FPS, this.speed/FPS)){
+    	if(isCollided(heroPath[this.pathDes].x, heroPath[this.pathDes].y, this.x, this.y, this.speed/FPS, this.speed/FPS)){
     		//移動到偵測到的路徑點
     		this.x = enemyPath[this.pathDes].x;
     		this.y = enemyPath[this.pathDes].y;
