@@ -20,10 +20,37 @@ function Hero(){
   this.speed=64;
   this.pathDes=0;
   this.direction={x:0,y:-1};
-  this.move=function(){
-    this.x=heroPath[this.pathDes].x;
-    this.y=heroPath[this.pathDes].y;
-    this.pathDes=this.pathDes+1;
+  this.move = function(){
+    	if(isCollided(enemyPath[this.pathDes].x, enemyPath[this.pathDes].y, this.x, this.y, this.speed/FPS, this.speed/FPS)){
+    		//移動到偵測到的路徑點
+    		this.x = enemyPath[this.pathDes].x;
+    		this.y = enemyPath[this.pathDes].y;
+    		//找出下一個路徑點
+    		this.pathDes += 1;
+    		if(this.pathDes >= enemyPath.length){
+    		    this.HP = 0;
+    		    treeHP = treeHP - 10;
+    		    return;
+    		}
+    		//算出方向，修改方向
+    		if(enemyPath[this.pathDes].x > this.x){
+    			this.direction = {x:1, y:0};
+    		}
+    		else if(enemyPath[this.pathDes].x < this.x){
+    			this.direction = {x:-1, y:0};
+    		}
+    		else if(enemyPath[this.pathDes].y > this.y){
+    			this.direction = {x:0, y:1};
+    		}
+    		else if(enemyPath[this.pathDes].y < this.y){
+    			this.direction = {x:0, y:-1};
+    		}
+    	}
+    	else{
+	    	this.x = this.x + this.direction.x * this.speed/FPS;
+    		this.y = this.y + this.direction.y * this.speed/FPS;
+    	}
+    }
   }
 }
 var heroes=[]
