@@ -4,7 +4,7 @@ var hp=100;
 var bglmg=document.createElement("img");
 bglmg.src="images/map.png";
 var slimeImg=document.createElement("img");
-heroImg.src="images/slime.gif";
+slimeImg.src="images/slime.gif";
 var heroPath=[
     {x:96,y:64},
     {x:384,y:64},
