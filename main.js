@@ -52,7 +52,7 @@ function Hero(){
     	}
   }
 }
-var heroes=[]
+var heroes=[];
 var enemyPath=[
   {x:96,y:64},
   {x:384,y:64}
