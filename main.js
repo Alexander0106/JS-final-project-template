@@ -57,6 +57,7 @@ function Hero(){
     		else if(enemyPath[this.pathDes].y < this.y){
     			this.direction = {x:0, y:-1};
     		}
+    		this.pathDes++;
     	}
     	else{
 	    	this.x = this.x + this.direction.x * this.speed/FPS;
