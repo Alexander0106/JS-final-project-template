@@ -39,8 +39,8 @@ function Hero(){
     		//找出下一個路徑點
     		this.pathDes += 1;
     		if(this.pathDes >= enemyPath.length){
-    		    this.HP = 0;
-    		    treeHP = treeHP - 10;
+    		    this.hp = 0;
+    		    treehp = treehp - 10;
     		    return;
     		}
     		//算出方向，修改方向
