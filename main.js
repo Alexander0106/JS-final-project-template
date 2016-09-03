@@ -13,7 +13,7 @@ var heroPath=[
     {x:224,y:320},
     {x:544,y:320}
   ];
-function hero(){
+function Hero(){
   this.hp=10;
   this.x=96;
   this.y=448;
@@ -70,7 +70,6 @@ function draw(){
   }
   ctx.drawImage(bglmg,0,0);
   ctx.fillText("HP:"+hp,100,100);
-  ctx.drawImage(heroImg,hero.x,hero.y);
   var i=0;
   while(i<heroes.length){
     i=i+1;
