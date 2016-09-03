@@ -13,6 +13,17 @@ var heroPath=[
     {x:224,y:320},
     {x:544,y:320}
   ];
+function isCollided(pointX,pointY,targetX,targetY,targetWidth,target,Height){
+  if(pointX>=targetX
+  &&pointX<=targetX+targetWidth
+  &&pointY>=targetY
+  &&pointY<=targetY+targetHeight
+  ){
+  return true;
+  }else{
+  return false;
+  }
+}
 function Hero(){
   this.hp=10;
   this.x=96;
