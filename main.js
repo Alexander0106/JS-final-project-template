@@ -1,6 +1,7 @@
 var clock=0;
 var FPS=60;
 var hp=100;
+var treehp=100;
 var bglmg=document.createElement("img");
 bglmg.src="images/map.png";
 var slimeImg=document.createElement("img");
