@@ -102,8 +102,8 @@ ctx.fillStyle = "white";
 
 var cursor = {x:0, y:0};
 $("#game").mousemove(function(event){
-	cursor.x = event.offsetX-16;
-	cursor.y = event.offsetY-16;
+	cursor.x = event.offsetX+16;
+	cursor.y = event.offsetY+16;
 });
 
 function Tower(){
