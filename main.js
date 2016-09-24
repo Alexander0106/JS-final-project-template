@@ -194,6 +194,8 @@ function draw(){
 	clock++;
 	if(treeHP<=0){
 		clearInterval(intervalID);
+		ctx.font = "60px";
+		ctx.fillText("GAME OVER!!!", 0, 32);
 	}
 }
 
