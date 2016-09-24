@@ -153,8 +153,8 @@ $("#game").click(function(event){
 	else{
 		if(isBuilding == true){
 			var tower = new Tower();
-			tower.x = cursor.x - cursor.x % 32;
-			tower.y = cursor.y - cursor.y % 32;
+			tower.x = (cursor.x - cursor.x % 32)-16;
+			tower.y = (cursor.y - cursor.y % 32)-16;
 			towers.push(tower);
 		}
 		isBuilding = false;
