@@ -106,15 +106,15 @@ $("#game").mousemove(function(event){
 	cursor.y = event.offsetY;
 });
 
-var tower = {
-	x:0,
-	y:0,
-	range: 96,
-	aimingEnemyId: null,
-	fireRate: 1,
-	readyToShootTime: 1,
-	damage: 100,
-	shoot: function(id){
+function Tower(){
+	this.x = 0;
+	this.y = 0;
+	this.range = 96;
+	this.aimingEnemyId = null;
+	this.fireRate = 1;
+	this.readyToShootTime = 1;
+	this.damage = 100;
+	this.shoot = function(id){
 		ctx.beginPath();
 		ctx.moveTo(this.x + 16, this.y);
 		ctx.lineTo(enemies[id].x + 16, enemies[id].y + 16);
@@ -122,8 +122,8 @@ var tower = {
 		ctx.lineWidth = 3;
 		ctx.stroke();
 		enemies[id].HP -= this.damage;
-	},
-	searchEnemy: function(){
+	};
+	this.searchEnemy = function(){
 	for(var i=0; i<enemies.length; i++){
 		this.readyToShootTime -= 1/FPS;
 		var distance = Math.sqrt( 
@@ -140,9 +140,10 @@ var tower = {
 	}
 		// 如果都沒找到，會進到這行，清除鎖定的目標
 		this.aimingEnemyId = null;
-	}
+	};
 
 };
+var towers = [];
 
 var isBuilding = false;
 $("#game").click(function(event){
@@ -151,8 +152,10 @@ $("#game").click(function(event){
 	}
 	else{
 		if(isBuilding == true){
+			var tower = new Tower();
 			tower.x = cursor.x - cursor.x % 32;
 			tower.y = cursor.y - cursor.y % 32;
+			towers.push(tower);
 		}
 		isBuilding = false;
 	}
@@ -170,13 +173,13 @@ function draw(){
 	if(isBuilding == true){
 		ctx.drawImage(towerImg,cursor.x,cursor.y);
 	}
-	for(var i=0;i<towers.length;i++){
+	for(var i = 0; i < towers.length; i++){
 		ctx.drawImage(towerImg,towers[i].x,towers[i].y);
-		tower.searchEnemy();
-	        if(tower.aimingEnemyId != null){
-		        var id = tower[i].aimingEnemyId;
-		        ctx.drawImage(crosshairImg, enemies[id].x, enemies[id].y);
-	        }
+		towers[i].searchEnemy();
+		if(towers[i].aimingEnemyId != null){
+			var id = towers[i].aimingEnemyId;
+			ctx.drawImage(crosshairImg, enemies[id].x, enemies[id].y);
+		}
 	}
 	for(var i = 0; i < enemies.length; i++){
 		if(enemies[i].HP <= 0){
