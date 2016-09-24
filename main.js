@@ -102,8 +102,8 @@ ctx.fillStyle = "white";
 
 var cursor = {x:0, y:0};
 $("#game").mousemove(function(event){
-	cursor.x = event.offsetX-16;
-	cursor.y = event.offsetY-16;
+	cursor.x = event.offsetX;
+	cursor.y = event.offsetY;
 });
 
 function Tower(){
@@ -153,8 +153,8 @@ $("#game").click(function(event){
 	else{
 		if(isBuilding == true){
 			var tower = new Tower();
-			tower.x = (cursor.x - cursor.x % 32)-16;
-			tower.y = (cursor.y - cursor.y % 32)-16;
+			tower.x = cursor.x - cursor.x % 32;
+			tower.y = cursor.y - cursor.y % 32;
 			towers.push(tower);
 		}
 		isBuilding = false;
