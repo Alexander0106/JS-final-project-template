@@ -192,7 +192,10 @@ function draw(){
 	ctx.fillText("HP: "+ treeHP, 0, 32);
 	
 	clock++;
+	if(treeHP<=0){
+		clearInterval(intervalID);
+	}
 }
 
 // 等待一秒再執行 draw
-setInterval( draw, 1000/FPS);
+var intervalID = setInterval( draw, 1000/FPS);
