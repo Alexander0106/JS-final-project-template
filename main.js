@@ -170,8 +170,13 @@ function draw(){
 	if(isBuilding == true){
 		ctx.drawImage(towerImg,cursor.x,cursor.y);
 	}
-	else{
-		ctx.drawImage(towerImg,tower.x,tower.y);
+	for(var i=0;i<towers.length;i++){
+		ctx.drawImage(towerImg,towers[i].x,tower[i].y);
+		tower.searchEnemy();
+	        if(tower.aimingEnemyId != null){
+		        var id = tower[i].aimingEnemyId;
+		        ctx.drawImage(crosshairImg, enemies[id].x, enemies[id].y);
+	        }
 	}
 	for(var i = 0; i < enemies.length; i++){
 		if(enemies[i].HP <= 0){
@@ -182,11 +187,7 @@ function draw(){
 		}
 	}
 	ctx.fillText("HP: "+ treeHP, 0, 32);
-	tower.searchEnemy();
-	if(tower.aimingEnemyId != null){
-		var id = tower.aimingEnemyId;
-		ctx.drawImage(crosshairImg, enemies[id].x, enemies[id].y);
-	}
+	
 	clock++;
 }
 
