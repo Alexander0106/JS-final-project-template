@@ -189,13 +189,13 @@ function draw(){
 			ctx.drawImage(enemyImg,enemies[i].x,enemies[i].y);
 		}
 	}
-	ctx.fillText("HP: "+ treeHP, 0, 32);
-	
 	clock++;
 	if(treeHP<=0){
 		clearInterval(intervalID);
 		ctx.font = "60px";
 		ctx.fillText("GAME OVER!!!", 0, 32);
+	}else{
+		ctx.fillText("HP: "+ treeHP, 0, 32);
 	}
 }
 
